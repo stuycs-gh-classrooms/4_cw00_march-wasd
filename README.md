@@ -44,7 +44,7 @@ We cannot assume the temperature from the greyscale image.
 #### Question 4
 In a temperature map, it is often useful to highlight particular temperature ranges. If you wanted to focus on higher temperatures, you might want to find a way to programatically highlight regions that are more red than others. Come up with an algorithm that would process the image such that the red regions are more prominent.
 
-The higher the red value, the darker the greyscale value will be, and the higher the blue value, the lighter the greyscale value would be.
+Cycle through all the pixels on the image. Check the color of each pixel, if it is enough red, set the gray value higher. For all other pixels, reduce its effect on gray value.
 
 ---
 
