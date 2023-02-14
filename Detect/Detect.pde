@@ -86,14 +86,22 @@ PImage highlightRed(PImage img) {
 
 
 
+
+
+
+
 void dots(PImage img, int resolution) {
   noStroke();
-  for(int y=0; y< (img.pixels.length/img.width)-1; y+= resolution){
-    for (int x = 0; x <img.width-1; x+= resolution){
-      color c = img.pixels[getIndexFromXY(x,y,img)];
-      if (red(c) > (green(c) + blue(c)) *.5){
-        fill(#FA);
+  for (int y = 0; y < (img.pixels.length/img.width) - 1; y+= resolution) {
+    for (int x = 0; x < img.width - 1; x+= resolution) {
+      color c = img.pixels[getIndexFromXY(x, y, img)];
+      if (red(c) > (green(c) + blue(c))*0.5) {
+        fill(#FA3F19);
       }
+      else {
+        fill(#0085CF);
+      }
+      circle(x, y, resolution/2);
     }
   }
 
